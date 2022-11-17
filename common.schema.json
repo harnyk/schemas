@@ -1,0 +1,808 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "Reusable field schemas definitions",
+    "$defs": {
+        "string": {
+            "type": "string"
+        },
+        "nullableNumber0To9999": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "minimum": 0,
+            "maximum": 9999
+        },
+        "stringOrInteger": {
+            "type": [
+                "string",
+                "integer"
+            ]
+        },
+        "nullableNonNegativeInteger": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            ]
+        },
+        "propertyConditions": {
+            "type": "string",
+            "enum": [
+                "poor",
+                "fair",
+                "good",
+                "mint",
+                "new"
+            ]
+        },
+        "boolean": {
+            "type": "boolean"
+        },
+        "nullableNumber0To1000": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "minimum": 0,
+            "maximum": 1000
+        },
+        "nullableLetterAToG": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "nullableELevel": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "E90",
+                        "E80",
+                        "E70",
+                        "E60",
+                        "E50",
+                        "E40",
+                        "E35",
+                        "E30",
+                        "E20",
+                        "E10"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "nullableEPCCategory": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "A++",
+                        "A+",
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "stringMaxLength100": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 0
+        },
+        "nullableNonNegativeNumber": {
+            "anyOf": [
+                {
+                    "type": "number",
+                    "minimum": 0
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "number0To6": {
+            "type": "number",
+            "maximum": 6,
+            "minimum": 0
+        },
+        "number0To10": {
+            "type": "number",
+            "maximum": 10,
+            "minimum": 0
+        },
+        "nullableLegalReportConformity": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "conform",
+                        "not_conform",
+                        "no_report",
+                        "not_applicable"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "nullableLocalizedString": {
+            "type": "object",
+            "patternProperties": {
+                "^(en|nl|fr|es|ca|en\\-AU|en\\-GB|fr\\-FR|fr\\-BE)$": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "nullableNumber0To999999999": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "minimum": 0,
+            "maximum": 999999999
+        },
+        "nullableLegalFloodRisk": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "no_flood_risk_area",
+                        "potential_flood_sensitive_area",
+                        "effective_flood_sensitive_area"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "nullableLandUseDesignation": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "residential",
+                        "mixed_residential",
+                        "industrial",
+                        "recreational",
+                        "park",
+                        "area_with_economical_activity",
+                        "forest_area",
+                        "agricultural",
+                        "nature_area",
+                        "natural_reserve",
+                        "residential_area_with_cultural_historical_value",
+                        "industrial_area_for_sme",
+                        "day_recreation_area",
+                        "other"
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "nullableStringOrInteger": {
+            "type": [
+                "string",
+                "integer",
+                "null"
+            ]
+        },
+        "nullableBoolean": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "dateString": {
+            "type": "string",
+            "format": "date"
+        },
+        "priceWithCurrency": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "amount": {
+                    "title": "Price description",
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 2147483647
+                },
+                "currency": {
+                    "title": "Currencies in ISO 4217 format",
+                    "type": "string",
+                    "enum": [
+                        "AED",
+                        "AFN",
+                        "ALL",
+                        "AMD",
+                        "ANG",
+                        "AOA",
+                        "ARS",
+                        "AUD",
+                        "AWG",
+                        "AZN",
+                        "BAM",
+                        "BBD",
+                        "BDT",
+                        "BGN",
+                        "BHD",
+                        "BIF",
+                        "BMD",
+                        "BND",
+                        "BOB",
+                        "BRL",
+                        "BSD",
+                        "BTN",
+                        "BWP",
+                        "BYR",
+                        "BZD",
+                        "CAD",
+                        "CDF",
+                        "CHF",
+                        "CLP",
+                        "CNY",
+                        "COP",
+                        "CRC",
+                        "CUP",
+                        "CVE",
+                        "DJF",
+                        "DKK",
+                        "DOP",
+                        "DZD",
+                        "EGP",
+                        "ERN",
+                        "ETB",
+                        "EUR",
+                        "FJD",
+                        "FKP",
+                        "GBP",
+                        "GEL",
+                        "GHS",
+                        "GIP",
+                        "GMD",
+                        "GNF",
+                        "GTQ",
+                        "GYD",
+                        "HKD",
+                        "HNL",
+                        "HRK",
+                        "HTG",
+                        "HUF",
+                        "IDR",
+                        "ILS",
+                        "INR",
+                        "IQD",
+                        "IRR",
+                        "ISK",
+                        "JMD",
+                        "JOD",
+                        "JPY",
+                        "KES",
+                        "KGS",
+                        "KHR",
+                        "KMF",
+                        "KPW",
+                        "KRW",
+                        "KWD",
+                        "KYD",
+                        "KZT",
+                        "LAK",
+                        "LBP",
+                        "LKR",
+                        "LRD",
+                        "LYD",
+                        "MAD",
+                        "MDL",
+                        "MGA",
+                        "MKD",
+                        "MMK",
+                        "MNT",
+                        "MOP",
+                        "MRO",
+                        "MUR",
+                        "MVR",
+                        "MWK",
+                        "MXN",
+                        "MYR",
+                        "MZN",
+                        "NAD",
+                        "NGN",
+                        "NIO",
+                        "NOK",
+                        "NPR",
+                        "NZD",
+                        "OMR",
+                        "PEN",
+                        "PGK",
+                        "PHP",
+                        "PKR",
+                        "PLN",
+                        "PYG",
+                        "QAR",
+                        "RON",
+                        "RSD",
+                        "RUB",
+                        "RWF",
+                        "SAR",
+                        "SBD",
+                        "SCR",
+                        "SDG",
+                        "SEK",
+                        "SGD",
+                        "SHP",
+                        "SLL",
+                        "SOS",
+                        "SRD",
+                        "SSP",
+                        "STD",
+                        "SYP",
+                        "SZL",
+                        "THB",
+                        "TJS",
+                        "TMT",
+                        "TND",
+                        "TOP",
+                        "TRY",
+                        "TTD",
+                        "TWD",
+                        "TZS",
+                        "UAH",
+                        "UGX",
+                        "USD",
+                        "UYU",
+                        "UZS",
+                        "VEF",
+                        "VND",
+                        "VUV",
+                        "WST",
+                        "XAF",
+                        "XCD",
+                        "XOF",
+                        "XPF",
+                        "YER",
+                        "ZAR",
+                        "ZMW"
+                    ]
+                }
+            }
+        },
+        "alphanumericStringOrNumberOrEmptyString": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9à-ùá-úã-õâ-ûä-üÀ-ÙÁ-ÚÃ-ÕÂ-ÛÄ-ü]+$"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "string",
+                    "maxLength": 0
+                }
+            ]
+        },
+        "countryCode": {
+            "type": "string",
+            "enum": [
+                "AF",
+                "AN",
+                "AX",
+                "AL",
+                "DZ",
+                "AS",
+                "AD",
+                "AO",
+                "AI",
+                "AQ",
+                "AG",
+                "AR",
+                "AM",
+                "AW",
+                "AC",
+                "AU",
+                "AT",
+                "AZ",
+                "BS",
+                "BH",
+                "BD",
+                "BB",
+                "BY",
+                "BE",
+                "BZ",
+                "BJ",
+                "BM",
+                "BT",
+                "BO",
+                "BA",
+                "BW",
+                "BR",
+                "IO",
+                "VG",
+                "BN",
+                "BG",
+                "BF",
+                "BI",
+                "KH",
+                "CM",
+                "CA",
+                "IC",
+                "CV",
+                "BQ",
+                "KY",
+                "CF",
+                "EA",
+                "TD",
+                "CL",
+                "CN",
+                "CX",
+                "CC",
+                "CO",
+                "KM",
+                "CG",
+                "CD",
+                "CK",
+                "CR",
+                "CI",
+                "HR",
+                "CU",
+                "CW",
+                "CY",
+                "CZ",
+                "DK",
+                "DG",
+                "DJ",
+                "DM",
+                "DO",
+                "EC",
+                "EG",
+                "SV",
+                "GQ",
+                "ER",
+                "EE",
+                "ET",
+                "FK",
+                "FO",
+                "FJ",
+                "FI",
+                "FR",
+                "GF",
+                "PF",
+                "TF",
+                "GA",
+                "GM",
+                "GE",
+                "DE",
+                "GH",
+                "GI",
+                "GR",
+                "GL",
+                "GD",
+                "GP",
+                "GU",
+                "GT",
+                "GG",
+                "GN",
+                "GW",
+                "GY",
+                "HT",
+                "HN",
+                "HK",
+                "HU",
+                "IS",
+                "IN",
+                "ID",
+                "IR",
+                "IQ",
+                "IE",
+                "IM",
+                "IL",
+                "IT",
+                "JM",
+                "JP",
+                "JE",
+                "JO",
+                "KZ",
+                "KE",
+                "KI",
+                "XK",
+                "KW",
+                "KG",
+                "LA",
+                "LV",
+                "LB",
+                "LS",
+                "LR",
+                "LY",
+                "LI",
+                "LT",
+                "LU",
+                "MO",
+                "MK",
+                "MG",
+                "MW",
+                "MY",
+                "MV",
+                "ML",
+                "MT",
+                "MH",
+                "MQ",
+                "MR",
+                "MU",
+                "YT",
+                "MX",
+                "FM",
+                "MD",
+                "MC",
+                "MN",
+                "ME",
+                "MS",
+                "MA",
+                "MZ",
+                "MM",
+                "NA",
+                "NR",
+                "NP",
+                "NL",
+                "NC",
+                "NZ",
+                "NI",
+                "NE",
+                "NG",
+                "NU",
+                "NF",
+                "KP",
+                "MP",
+                "NO",
+                "OM",
+                "PK",
+                "PW",
+                "PS",
+                "PA",
+                "PG",
+                "PY",
+                "PE",
+                "PH",
+                "PN",
+                "PL",
+                "PT",
+                "PR",
+                "QA",
+                "RE",
+                "RO",
+                "RU",
+                "RW",
+                "WS",
+                "SM",
+                "ST",
+                "SA",
+                "SN",
+                "RS",
+                "SC",
+                "SL",
+                "SG",
+                "SX",
+                "SK",
+                "SI",
+                "SB",
+                "SO",
+                "ZA",
+                "GS",
+                "KR",
+                "SS",
+                "ES",
+                "LK",
+                "BL",
+                "SH",
+                "KN",
+                "LC",
+                "MF",
+                "PM",
+                "VC",
+                "SD",
+                "SR",
+                "SJ",
+                "SZ",
+                "SE",
+                "CH",
+                "SY",
+                "TW",
+                "TJ",
+                "TZ",
+                "TH",
+                "TL",
+                "TG",
+                "TK",
+                "TO",
+                "TT",
+                "TA",
+                "TN",
+                "TR",
+                "TM",
+                "TC",
+                "TV",
+                "UM",
+                "VI",
+                "UG",
+                "UA",
+                "AE",
+                "GB",
+                "US",
+                "UY",
+                "UZ",
+                "VU",
+                "VA",
+                "VE",
+                "VN",
+                "WF",
+                "EH",
+                "YE",
+                "ZM",
+                "ZW"
+            ]
+        },
+        "floorNumber": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+$"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "string",
+                    "maxLength": 0
+                }
+            ]
+        },
+        "localizedString": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$": {
+                    "type": "string"
+                }
+            }
+        },
+        "percentage": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "nonNegativeNumber": {
+            "type": "number",
+            "minimum": 0
+        },
+        "linearSizeObject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "size": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "size_description": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "units": {
+                    "title": "Height units",
+                    "enum": [
+                        "cm",
+                        "inch"
+                    ]
+                }
+            },
+            "required": [
+                "size",
+                "size_description",
+                "units"
+            ]
+        },
+        "areaObject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "size": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "size_description": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "units": {
+                    "title": "Area units",
+                    "enum": [
+                        "sq_m",
+                        "sq_ft"
+                    ]
+                }
+            },
+            "required": [
+                "size",
+                "size_description",
+                "units"
+            ]
+        },
+        "outsideAreaObject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "size": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "size_description": {
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "units": {
+                    "title": "Outside units",
+                    "enum": [
+                        "are",
+                        "acre",
+                        "sq_m",
+                        "sq_ft"
+                    ]
+                }
+            },
+            "required": [
+                "size",
+                "size_description",
+                "units"
+            ]
+        }
+    }
+}
