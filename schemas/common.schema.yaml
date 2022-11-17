@@ -671,3 +671,225 @@ $defs:
       - size
       - size_description
       - units
+
+  documents:
+    title: Estate's documents
+    type: object
+    additionalProperties: false
+    patternProperties:
+      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
+        $ref: '#/$defs/document'
+
+  document:
+    title: Single document description
+    type: object
+    additionalProperties: false
+    properties:
+      bucket:
+        type: string
+      filename:
+        type:
+          - string
+          - 'null'
+      extension:
+        type: string
+      description:
+        type:
+          - string
+          - 'null'
+      private:
+        type:
+          - boolean
+          - 'null'
+      content-type:
+        type: string
+      uploaded_at:
+        type: string
+        format: date-time
+
+  floorPlans:
+    title: Floor plans description
+    type: object
+    additionalProperties: false
+    patternProperties:
+      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
+        '$ref': '#/$defs/document'
+
+  images:
+    title: Images description
+    type: object
+    additionalProperties: false
+    patternProperties:
+      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
+        '$ref': '#/$defs/image'
+
+  image:
+    title: Single image description
+    type: object
+    additionalProperties: false
+    properties:
+      ordinal:
+        description:
+          Gives the ordinal place in which the image should appear in the list
+          of images. Starts at 0.
+        type: integer
+      bucket:
+        type: string
+      filename:
+        type: string
+      extension:
+        type: string
+      description:
+        type:
+          - string
+          - 'null'
+      private:
+        type:
+          - boolean
+          - 'null'
+      preview:
+        type:
+          - boolean
+          - 'null'
+      equirectangular:
+        type:
+          - boolean
+          - 'null'
+      content-type:
+        type: string
+      uploaded_at:
+        type: string
+        format: date-time
+
+  integer:
+    type: integer
+
+  geopoint:
+    description: A geographical coordinate
+    type: object
+    properties:
+      latitude:
+        type: number
+        minimum: -90
+        maximum: 90
+      longitude:
+        type: number
+        minimum: -180
+        maximum: 180
+    required:
+      - latitude
+      - longitude
+
+  object:
+    type: object
+    additionalProperties: false
+
+  nullableString:
+    type:
+      - string
+      - 'null'
+
+  dateOrEmptyString:
+    anyOf:
+      - type: string
+        format: date
+      - type: string
+        maxLength: 0
+
+  booleanOrEmptyString:
+    anyOf:
+      - type: boolean
+      - type: string
+        maxLength: 0
+
+  nullableDateOrString:
+    anyOf:
+      - type: 'null'
+      - type: string
+      - type: string
+        format: date-time
+
+  openHomes:
+    title: Open homes description
+    type: object
+    additionalProperties: false
+    patternProperties:
+      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
+        '$ref': '#/$defs/openHome'
+
+  openHome:
+    title: Open home description
+    type: object
+    additionalProperties: false
+    properties:
+      start_date:
+        $ref: '#/$defs/nullableDateOrString'
+      end_date:
+        $ref: '#/$defs/nullableDateOrString'
+
+  rooms:
+    title: Rooms description
+    type: object
+    additionalProperties: false
+    patternProperties:
+      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
+        '$ref': '#/$defs/room'
+
+  room:
+    title: Room description
+    type: object
+    additionalProperties: false
+    properties:
+      ordinal:
+        description:
+          Gives the ordinal place in which the room should appear in the list
+          of rooms. Starts at 0.
+        type: integer
+      size:
+        type:
+          - number
+          - string
+      size_description:
+        type:
+          - number
+          - string
+      type:
+        type: string
+      units:
+        - enum:
+            - sq_m
+            - sq_ft
+            - are
+            - acre
+    required:
+      - size
+      - size_description
+      - type
+      - units
+
+  orientation:
+    title: Orientation of the compass when pointing to things
+    type: string
+    enum:
+      - 'N'
+      - NE
+      - E
+      - SE
+      - S
+      - SW
+      - W
+      - NW
+
+  uint31:
+    title: Int32 without negative numbers
+    type: integer
+    minimum: 0
+    maximum: 2147483647
+
+  nullableUint31:
+    title: Int32 without negative numbers or null
+    type:
+      - integer
+      - 'null'
+    minimum: 0
+    maximum: 2147483647
