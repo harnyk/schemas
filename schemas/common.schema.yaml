@@ -856,11 +856,11 @@ $defs:
       type:
         type: string
       units:
-        - enum:
-            - sq_m
-            - sq_ft
-            - are
-            - acre
+        enum:
+          - sq_m
+          - sq_ft
+          - are
+          - acre
     required:
       - size
       - size_description
