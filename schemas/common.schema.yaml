@@ -106,7 +106,7 @@ $defs:
   nullableLocalizedString:
     type: object
     patternProperties:
-      "^(en|nl|fr|es|ca|en\\-AU|en\\-GB|fr\\-FR|fr\\-BE)$":
+      '^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$':
         type:
           - string
           - 'null'
@@ -814,7 +814,7 @@ $defs:
       - type: 'null'
       - type: string
         format: date-time
-  
+
   uuid:
     type: string
     format: uuid
