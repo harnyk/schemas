@@ -909,3 +909,7 @@ $defs:
       - 'null'
     minimum: 0
     maximum: 2147483647
+
+  uri:
+    type: string
+    format: uri
