@@ -36,7 +36,7 @@ $defs:
       - 'null'
     minimum: 0
     maximum: 1000
-  nullableLetterAToG:
+  nullableAGScale:
     anyOf:
       - type: string
         enum:
@@ -47,6 +47,8 @@ $defs:
           - E
           - F
           - G
+          - empty
+          - not_applicable
       - type: 'null'
   nullableELevel:
     anyOf:
@@ -913,3 +915,8 @@ $defs:
   uri:
     type: string
     format: uri
+
+  integerMinus999To999:
+    type: integer
+    minimum: -999
+    maximum: 999
