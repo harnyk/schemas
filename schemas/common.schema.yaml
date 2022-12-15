@@ -88,6 +88,10 @@ $defs:
       - type: number
         minimum: 0
       - type: 'null'
+  nullableNumber:
+    anyOf:
+      - type: number
+      - type: 'null'
   number0To6:
     type: number
     maximum: 6
