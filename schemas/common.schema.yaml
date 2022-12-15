@@ -92,6 +92,8 @@ $defs:
     anyOf:
       - type: number
       - type: 'null'
+  number:
+    type: number
   number0To6:
     type: number
     maximum: 6
