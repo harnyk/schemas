@@ -15,6 +15,10 @@ $defs:
     type:
       - string
       - integer
+  stringOrNumber:
+    type:
+      - string
+      - number
   nullableNonNegativeInteger:
     anyOf:
       - type: 'null'
