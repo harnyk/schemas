@@ -1,4 +1,4 @@
-'$schema': http://json-schema.org/draft-06/schema#
+"$schema": http://json-schema.org/draft-06/schema#
 
 description: Reusable field schemas definitions
 
@@ -8,7 +8,7 @@ $defs:
   nullableNumber0To9999:
     type:
       - number
-      - 'null'
+      - "null"
     minimum: 0
     maximum: 9999
   stringOrInteger:
@@ -21,7 +21,7 @@ $defs:
       - number
   nullableNonNegativeInteger:
     anyOf:
-      - type: 'null'
+      - type: "null"
       - type: integer
         minimum: 0
   propertyConditions:
@@ -37,7 +37,7 @@ $defs:
   nullableNumber0To1000:
     type:
       - number
-      - 'null'
+      - "null"
     minimum: 0
     maximum: 1000
   ADScale:
@@ -60,7 +60,7 @@ $defs:
           - G
           - empty
           - not_applicable
-      - type: 'null'
+      - type: "null"
   nullableELevel:
     anyOf:
       - type: string
@@ -75,7 +75,7 @@ $defs:
           - E30
           - E20
           - E10
-      - type: 'null'
+      - type: "null"
   nullableEPCCategory:
     anyOf:
       - type: string
@@ -89,7 +89,7 @@ $defs:
           - E
           - F
           - G
-      - type: 'null'
+      - type: "null"
   stringMaxLength100:
     type: string
     maxLength: 100
@@ -98,11 +98,11 @@ $defs:
     anyOf:
       - type: number
         minimum: 0
-      - type: 'null'
+      - type: "null"
   nullableNumber:
     anyOf:
       - type: number
-      - type: 'null'
+      - type: "null"
   number:
     type: number
   number0To6:
@@ -121,19 +121,19 @@ $defs:
           - not_conform
           - no_report
           - not_applicable
-      - type: 'null'
+      - type: "null"
   nullableLocalizedString:
     type: object
     patternProperties:
-      '^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$':
+      "^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$":
         type:
           - string
-          - 'null'
+          - "null"
     additionalProperties: false
   nullableNumber0To999999999:
     type:
       - number
-      - 'null'
+      - "null"
     minimum: 0
     maximum: 999999999
   nullableLegalFloodRisk:
@@ -143,7 +143,7 @@ $defs:
           - no_flood_risk_area
           - potential_flood_sensitive_area
           - effective_flood_sensitive_area
-      - type: 'null'
+      - type: "null"
   nullableLandUseDesignation:
     anyOf:
       - type: string
@@ -162,16 +162,16 @@ $defs:
           - industrial_area_for_sme
           - day_recreation_area
           - other
-      - type: 'null'
+      - type: "null"
   nullableStringOrInteger:
     type:
       - string
       - integer
-      - 'null'
+      - "null"
   nullableBoolean:
     type:
       - boolean
-      - 'null'
+      - "null"
   dateString:
     type: string
     format: date
@@ -183,7 +183,7 @@ $defs:
         title: Price description
         type:
           - number
-          - 'null'
+          - "null"
         minimum: 0
         maximum: 2147483647
       currency:
@@ -344,7 +344,7 @@ $defs:
   alphanumericStringOrNumberOrEmptyString:
     anyOf:
       - type: string
-        pattern: '^[A-Za-z0-9à-ùá-úã-õâ-ûä-üÀ-ÙÁ-ÚÃ-ÕÂ-ÛÄ-ü]+$'
+        pattern: "^[A-Za-z0-9à-ùá-úã-õâ-ûä-üÀ-ÙÁ-ÚÃ-ÕÂ-ÛÄ-ü]+$"
       - type: number
       - type: string
         maxLength: 0
@@ -519,7 +519,7 @@ $defs:
       - NF
       - KP
       - MP
-      - 'NO'
+      - "NO"
       - OM
       - PK
       - PW
@@ -608,7 +608,7 @@ $defs:
   floorNumber:
     anyOf:
       - type: string
-        pattern: '^-?[0-9]+$'
+        pattern: "^-?[0-9]+$"
       - type: number
       - type: string
         maxLength: 0
@@ -616,7 +616,7 @@ $defs:
     type: object
     additionalProperties: false
     patternProperties:
-      '^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$':
+      "^(en|nl|fr|es|ca|en-AU|en-GB|fr-FR|fr-BE)$":
         type: string
   percentage:
     type: number
@@ -696,8 +696,8 @@ $defs:
     type: object
     additionalProperties: false
     patternProperties:
-      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
-        $ref: '#/$defs/document'
+      "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$":
+        $ref: "#/$defs/document"
 
   document:
     title: Single document description
@@ -709,17 +709,17 @@ $defs:
       filename:
         type:
           - string
-          - 'null'
+          - "null"
       extension:
         type: string
       description:
         type:
           - string
-          - 'null'
+          - "null"
       private:
         type:
           - boolean
-          - 'null'
+          - "null"
       content-type:
         type: string
       uploaded_at:
@@ -731,16 +731,16 @@ $defs:
     type: object
     additionalProperties: false
     patternProperties:
-      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
-        '$ref': '#/$defs/document'
+      "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$":
+        "$ref": "#/$defs/document"
 
   images:
     title: Images description
     type: object
     additionalProperties: false
     patternProperties:
-      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
-        '$ref': '#/$defs/image'
+      "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$":
+        "$ref": "#/$defs/image"
 
   image:
     title: Single image description
@@ -761,19 +761,19 @@ $defs:
       description:
         type:
           - string
-          - 'null'
+          - "null"
       private:
         type:
           - boolean
-          - 'null'
+          - "null"
       preview:
         type:
           - boolean
-          - 'null'
+          - "null"
       equirectangular:
         type:
           - boolean
-          - 'null'
+          - "null"
       content-type:
         type: string
       uploaded_at:
@@ -806,7 +806,7 @@ $defs:
   nullableString:
     type:
       - string
-      - 'null'
+      - "null"
 
   dateOrEmptyString:
     anyOf:
@@ -823,14 +823,14 @@ $defs:
 
   nullableDateOrString:
     anyOf:
-      - type: 'null'
+      - type: "null"
       - type: string
       - type: string
         format: date-time
 
   nullableDate:
     anyOf:
-      - type: 'null'
+      - type: "null"
       - type: string
         format: date-time
 
@@ -840,7 +840,7 @@ $defs:
 
   nullableUUID:
     anyOf:
-      - type: 'null'
+      - type: "null"
       - type: string
         format: uuid
 
@@ -849,8 +849,8 @@ $defs:
     type: object
     additionalProperties: false
     patternProperties:
-      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
-        '$ref': '#/$defs/openHome'
+      "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$":
+        "$ref": "#/$defs/openHome"
 
   openHome:
     title: Open home description
@@ -858,17 +858,17 @@ $defs:
     additionalProperties: false
     properties:
       start_date:
-        $ref: '#/$defs/nullableDateOrString'
+        $ref: "#/$defs/nullableDateOrString"
       end_date:
-        $ref: '#/$defs/nullableDateOrString'
+        $ref: "#/$defs/nullableDateOrString"
 
   rooms:
     title: Rooms description
     type: object
     additionalProperties: false
     patternProperties:
-      '^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$':
-        '$ref': '#/$defs/room'
+      "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$":
+        "$ref": "#/$defs/room"
 
   room:
     title: Room description
@@ -906,7 +906,7 @@ $defs:
     title: Orientation of the compass when pointing to things
     type: string
     enum:
-      - 'N'
+      - "N"
       - NE
       - E
       - SE
@@ -925,7 +925,7 @@ $defs:
     title: Int32 without negative numbers or null
     type:
       - integer
-      - 'null'
+      - "null"
     minimum: 0
     maximum: 2147483647
 
