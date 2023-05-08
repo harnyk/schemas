@@ -40,6 +40,13 @@ $defs:
       - 'null'
     minimum: 0
     maximum: 1000
+  ADScale:
+    type: string
+    enum:
+      - A
+      - B
+      - C
+      - D
   nullableAGScale:
     anyOf:
       - type: string
