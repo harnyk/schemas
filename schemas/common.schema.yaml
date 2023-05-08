@@ -162,6 +162,11 @@ $defs:
           - industrial_area_for_sme
           - day_recreation_area
           - other
+          - area_for_leisure_accomodation
+          - agricultural_area_with_scenic_value
+          - residential_area_with_a_rural_character
+          - residential_park
+          - residential_expansion_area
       - type: "null"
   nullableStringOrInteger:
     type:
