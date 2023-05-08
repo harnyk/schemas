@@ -148,25 +148,25 @@ $defs:
     anyOf:
       - type: string
         enum:
-          - residential
-          - mixed_residential
-          - industrial
-          - recreational
-          - park
-          - area_with_economical_activity
-          - forest_area
           - agricultural
-          - nature_area
-          - natural_reserve
-          - residential_area_with_cultural_historical_value
-          - industrial_area_for_sme
-          - day_recreation_area
-          - other
-          - area_for_leisure_accomodation
           - agricultural_area_with_scenic_value
+          - area_for_leisure_accomodation
+          - area_with_economical_activity
+          - day_recreation_area
+          - forest_area
+          - industrial
+          - industrial_area_for_sme
+          - mixed_residential
+          - natural_reserve
+          - nature_area
+          - other
+          - park
+          - recreational
+          - residential
           - residential_area_with_a_rural_character
-          - residential_park
+          - residential_area_with_cultural_historical_value
           - residential_expansion_area
+          - residential_park
       - type: "null"
   nullableStringOrInteger:
     type:
