@@ -839,6 +839,12 @@ $defs:
       - type: string
         format: date-time
 
+  nullableDateString:
+    anyOf:
+      - type: "null"
+      - type: string
+        format: date
+
   uuid:
     type: string
     format: uuid
