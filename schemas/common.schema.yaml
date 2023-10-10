@@ -833,13 +833,13 @@ $defs:
       - type: string
         format: date-time
 
-  nullableDate:
+  nullableDateTime:
     anyOf:
       - type: "null"
       - type: string
         format: date-time
 
-  nullableDateString:
+  nullableDate:
     anyOf:
       - type: "null"
       - type: string
